@@ -1,0 +1,42 @@
+<!-- modal start -->      
+<template if:true={isShowModal}>
+
+<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+     <div class="slds-modal__container">
+                    <!-- modal header start -->
+     <header class="slds-modal__header">
+          <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleCancel}>
+               <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse" size="small" ></lightning-icon>
+               <span class="slds-assistive-text">Close</span>
+          </button>
+          <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Welcome To Rostan</h2>
+     </header>
+
+                    <!-- modal body start -->
+     <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+
+          <!-- RELATED TO PORODUCTS SELECTION AND ASSOCIATED BUTTONS -->
+          <p>Display Products</p>
+     </div>
+
+                    <!-- modal footer start-->
+     <footer class="slds-modal__footer">
+          <lightning-button label="Save and Continue" title="Save and Continue" onclick={handleSaveContinue}></lightning-button>
+          <lightning-button label="Save and Next" title="Save and Next" onclick={handleSaveNext}></lightning-button>
+          <lightning-button label="Cancel" title="Cancel" onclick={handleCancel}></lightning-button>
+     </footer>
+
+     </div>
+</section>
+          <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+<!-- modal end -->
+
+
+@track isShowModal = false;
+    showModalBox() {  
+        this.isShowModal = true;
+    }
+    handleCancel() {  
+        this.isShowModal = false;
+    }
